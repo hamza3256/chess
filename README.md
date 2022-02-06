@@ -1,1 +1,1 @@
-# Chess Multiplayer game
+# Chess online

@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import styled from "styled-components";
+import { Helmet } from "react-helmet-async";
 
-function App() {
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+import MainPage from "./pages/MainPage";
+
+const ErrorPageDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  font-size: 50px;
+`;
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Helmet>
+        <title>Hamza's Chess Club</title>
+      </Helmet>
+      <Routes>
+        <Route component={MainPage} path='/' exact />
+        <Route component={LoginPage} path='/login' exact />
+        <Route component={RegisterPage} path='/register' exact />
+        <Route
+          render={({ location }) => (
+            <ErrorPageDiv>
+              <h1>404 Error</h1>
+            </ErrorPageDiv>
+          )}
+        />
+      </Routes>
+    </>
   );
-}
+};
 
 export default App;

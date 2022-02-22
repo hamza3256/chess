@@ -1,0 +1,23 @@
+{
+  "name": "chess",
+  "version": "1.0.0",
+  "description": "A lambda server that provides a best move chess API",
+  "main": "chess-server.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamza3256/chess.git"
+  },
+  "author": "Muhammad Hamza",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hamza3256/chess/issues"
+  },
+  "homepage": "https://github.com/hamza3256/chess#readme",
+  "dependencies": {
+    "stockfish": "^6.0.5",
+    "urlencode": "^1.1.0"
+  }
+}
